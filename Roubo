@@ -1,0 +1,26 @@
+$onlyIf[$getVar[cd-roubo;$authorID]<=$getTimestamp;Volte em <t:$getVar[cd-roubo;$authorID]:R>]
+$if[$getServerVar[manutencao]==yes]
+🛠️・<@$authorID>, Este comando está em manutenção, tente usar este comando mais tarde.
+$endif
+$if[$getServerVar[manutencao]==no]
+$if[$randomText[good;good;bad]==bad]
+
+$setVar[Mortal Coins;$sub[$getVar[Mortal Coins;$authorID];$random[5000;10000]];$authorID]
+$title[💣 Você Cometeu Um Crime]
+$description[$randomText[Você Tentou Roubar Um Diamante Do Museu Mas Foi Pego Pelas Luzes De Segurança,Perdendo;Você Tentou Roubar O Banco Mas Foi Pego Pela Polícia,Perdendo;Você Tentou Roubar Xenon Coins Da Casa De Um Rico,Mas O Segurança Percebeu,E Você Perdeu] $numberSeparator[$random[10000;20000]] Mortal Coins]
+$color[FF3F3F]
+
+
+$else
+$setVar[Mortal Coins;$sum[$getVar[Mortal Coins;$authorID];$random[5000;10000]];$authorID]
+$title[💣 Você Cometeu Um Crime]
+$description[$randomText[Você Tentou Roubar O Diamante Do Museu,Ganhando;Você Tentou Roubar O Banco Ganhando;Você Tentou Roubar Bela Coins Da Casa De Um Rico,Ganhando] $numberSeparator[$random[5000;10000]] Mortal Coins]
+$color[edb142]
+
+$endif
+$reply
+
+$onlyForChannels[975235038067183707;Utilize este comando em <#975235038067183707>]
+$nomention
+$setVar[cd-roubo;$calculate[(60*60)+$getTimestamp];$authorID]
+$endif
