@@ -1,0 +1,20 @@
+$if[$getServerVar[manutencao]==yes]
+🛠️・Este comando está em manutenção, tente usar este comando mais tarde.
+$endif
+$if[$getServerVar[manutencao]==no]
+$nomention
+$title[💰 SALDO TOTAL]
+$description[**Informações**
+> Proprietário: <@$mentioned[1;yes]>
+> Agência: `Mortal Coins`
+> Pix: `$mentioned[1;yes]`
+**Saldo**
+> O usuário tem $numberSeparator[$getVar[Mortal Coins;$mentioned[1;yes]]] Mortal Coins na sua carteira!
+
+> O usuário tem $numberSeparator[$getVar[banco;$mentioned[1;yes]]] Mortal Coins no seu banco!]
+$footer[$username]
+$thumbnail[$userAvatar[$mentioned[1;yes]]]
+$addTimestamp
+$reply
+$color[$random[0;9999]]
+$endif
