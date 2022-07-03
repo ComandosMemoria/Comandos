@@ -1,0 +1,17 @@
+$var[pegar;$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$message[1];k;000;1];mi;000000;1];bi;000000000;1];tri;000000000000;1];all;$getVar[Mortal Coins;$authorID];1]]
+
+$onlyIf[$getVar[Equipe;$authorID]==yes;👮 | **Apenas a equipe de criação do bot pode usar esse comando**]
+$nomention
+$onlyForChannels[975235038067183707;Utilize este comando em <#975235038067183707>]
+$onlyIf[$getVar[Equipe;$authorID]==yes;👮 | **Apenas a equipe de criação do bot pode usar esse comando**]
+$color[fcfcfc]
+$title[Take]
+$description[**<@$authorID>, você pegou os coins com sucesso $numberSeparator[$var[pegar]] Mortal Coins de <@$mentioned[1]>.**]
+$footerIcon[$authorAvatar]
+$footer[$username]
+$thumbnail[https://media.discordapp.net/attachments/965095762851668008/968175447844204544/909677379675365387.png]
+$setVar[Mortal Coins;$sub[$getVar[Mortal Coins;$mentioned[1]];$var[pegar]];$mentioned[1]]
+$setVar[Mortal Coins;$sum[$getVar[Mortal Coins;$authorID];$var[pegar]];$authorID]
+$reply
+$onlyForChannels[975235038067183707;Utilize este comando em <#975235038067183707>]
+$onlyForIDs[751688058683916318;Você não tem permissão para utilizar este comando]
